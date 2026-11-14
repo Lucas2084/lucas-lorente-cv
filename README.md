@@ -1,28 +1,22 @@
-# Currículum web de Lucas Lorente Arjona
+# Lucas Lorente Arjona · CV online
 
-Sitio estático en español con HTML y CSS, sin frameworks, dependencias, fuentes externas ni JavaScript. Abre `index.html` directamente en el navegador para verlo.
+Mi currículum web como técnico de sistemas y redes, con experiencia en soporte técnico internacional y formación en ciberseguridad. Incluye experiencia profesional, formación, competencias técnicas, idiomas y enlaces de contacto.
 
-## Archivos
+## Tecnologías
 
-- `index.html`: contenido completo del currículum y enlaces de contacto.
-- `style.css`: diseño adaptable, variables de personalización y estilos de impresión.
-- `assets/`: carpeta para añadir `profile.jpg`; contiene instrucciones para la foto.
-- `CV_Lucas_Lorente_2026.pdf`: documento original enlazado para descargar.
-- `.nojekyll`: permite servir los archivos directamente con GitHub Pages.
+Desarrollado con HTML5 semántico y CSS3. El diseño se adapta a móviles y escritorio e incluye navegación por teclado, preferencias de movimiento reducido y estilos de impresión.
 
-## Publicar en GitHub Pages
+## Estructura
 
-1. Crea un repositorio en GitHub y sube `index.html`, `style.css`, `.nojekyll`, la carpeta `assets/` y el PDF original a su raíz. El archivo DOCX no es necesario.
-2. En el repositorio, abre **Settings → Pages**.
-3. Selecciona **Deploy from a branch**, la rama `main` y la carpeta **/ (root)**. Guarda la configuración.
-4. Cuando termine la publicación, GitHub mostrará el enlace del sitio en esa misma sección.
+```text
+index.html       Contenido del currículum y enlaces de contacto
+style.css        Diseño responsivo y estilos de impresión
+assets/          Recursos e instrucciones para la foto de perfil
+.nojekyll        Archivo para servir el sitio estático en GitHub Pages
+```
 
-Los enlaces a archivos son relativos, compatibles tanto con repositorios de proyecto como con sitios `usuario.github.io`.
+## Contacto
 
-## Personalizar
-
-Modifica los colores, fuentes y espaciados en `:root`, al principio de `style.css`. Cada sección del HTML y CSS está comentada. Duplica los artículos correspondientes para incorporar experiencia o formación. Añade `assets/profile.jpg` siguiendo las instrucciones de esa carpeta.
-
-El PDF no detalla proyectos ni certificaciones independientes; no se han inventado entradas para estas categorías. La especialización en ciberseguridad se recoge en Formación y Cambridge B2 First figura como preparación, no como certificación obtenida.
-
-Puedes usar **Imprimir → Guardar como PDF** en el navegador: el sitio incluye estilos específicos para impresión. El enlace «Descargar CV» entrega el PDF original.
+- [GitHub · Lucas2084](https://github.com/Lucas2084)
+- [LinkedIn · Lucas Lorente Arjona](www.linkedin.com/in/lucas-lorente-arjona)
+- [Email](mailto:lucas-lorente@outlook.com)
