@@ -1,0 +1,139 @@
+/* Personalización: colores, tipografía, anchos y espaciados del sitio. */
+:root {
+    color-scheme: light;
+    --color-background: #f8f9f6;
+    --color-surface: #ffffff;
+    --color-ink: #132f3c;
+    --color-text: #40535b;
+    --color-accent: #24665d;
+    --color-soft: #eaf0eb;
+    --color-border: #d8e0dc;
+    --font-body: "Segoe UI", Arial, sans-serif;
+    --font-display: Georgia, "Times New Roman", serif;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3.5rem;
+    --space-section: 4rem;
+    --content-width: 1120px;
+    --radius: 0.75rem;
+}
+
+/* Base: medidas predecibles, lectura y accesibilidad por teclado. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+body { margin: 0; background: var(--color-background); color: var(--color-text); font-family: var(--font-body); font-size: 1rem; line-height: 1.75; }
+a { color: inherit; text-underline-offset: 0.25em; }
+a:hover { color: var(--color-accent); }
+a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 5px; border-radius: 2px; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { color: var(--color-ink); }
+h2 { font-size: 1.35rem; line-height: 1.35; font-weight: 600; }
+h3 { font-size: 1.13rem; line-height: 1.5; font-weight: 600; }
+p + p { margin-top: var(--space-sm); }
+.container { width: min(var(--content-width), calc(100% - 2.5rem)); margin-inline: auto; }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 10; background: var(--color-ink); color: white; padding: var(--space-xs) var(--space-sm); }
+.skip-link:focus { top: 1rem; }
+
+/* Navegación: anclas y descarga del CV. */
+.site-nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-sm); padding-block: var(--space-md); border-bottom: 1px solid var(--color-border); }
+.nav-links { order: 3; display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; width: 100%; }
+.nav-links a, .download-link { font-size: 0.85rem; text-decoration: none; font-weight: 600; }
+.download-link { color: var(--color-accent); }
+
+/* Cabecera: jerarquía tipográfica y presentación personal. */
+.hero { display: grid; gap: var(--space-xl); padding-block: var(--space-xl); }
+.eyebrow { color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; font-weight: 700; }
+h1 { margin-block: var(--space-md); font-family: var(--font-display); font-size: clamp(2.9rem, 7vw, 5.25rem); font-weight: 400; letter-spacing: -0.055em; line-height: 1.04; }
+h1 span { display: block; }
+.hero-role { font-size: clamp(1.1rem, 2.5vw, 1.35rem); color: var(--color-ink); font-weight: 600; }
+.hero-description { max-width: 34rem; margin-top: var(--space-xs); }
+.button { display: inline-flex; align-items: center; gap: var(--space-lg); margin-top: var(--space-lg); padding: 0.8rem 1.25rem; border-radius: 0.35rem; background: var(--color-ink); color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+.button:hover { background: var(--color-accent); color: white; }
+
+/* Foto: añade assets/profile.jpg para cubrir automáticamente las iniciales.
+   Cambia object-position equivalente (background-position) si necesitas ajustar el recorte. */
+.avatar-frame { justify-self: start; }
+.profile-avatar { position: relative; display: grid; place-items: center; width: clamp(170px, 30vw, 260px); aspect-ratio: 1 / 1.12; overflow: hidden; border: 1px solid #c5d4cb; border-radius: 8rem 8rem 0.75rem 0.75rem; background: var(--color-soft); }
+.profile-avatar span { font-family: var(--font-display); font-size: 5rem; letter-spacing: -0.1em; color: var(--color-accent); padding-right: 0.1em; }
+.profile-avatar::after { content: ""; position: absolute; inset: 0; background-image: url("assets/profile.jpg"); background-position: center; background-size: cover; }
+.avatar-caption { display: block; margin-top: var(--space-sm); text-align: center; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--color-accent); }
+
+/* Secciones del currículum: título lateral en escritorio, apilado en móvil. */
+.resume-section { display: grid; gap: var(--space-lg); padding-block: var(--space-section); border-bottom: 1px solid var(--color-border); }
+.resume-section:last-child { border-bottom: 0; }
+.section-content { min-width: 0; }
+.profile-text { font-size: 1.08rem; }
+.profile-text p:first-child { color: var(--color-ink); }
+
+/* Experiencia y formación: fechas, entidades y responsabilidades editables. */
+.item-date { margin-bottom: 0.65rem; color: var(--color-accent); font-size: 0.8rem; font-weight: 600; }
+.organization { margin-top: 0.4rem; font-size: 0.95rem; }
+.detail-list { padding-left: 1.15rem; margin: var(--space-md) 0 0; }
+.detail-list li { padding-left: 0.35rem; margin-top: 0.65rem; }
+.detail-list li::marker { color: var(--color-accent); }
+.education-item + .education-item { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); }
+
+/* Competencias: categorías y etiquetas, sin gráficos de nivel arbitrarios. */
+.skills-grid { display: grid; gap: var(--space-lg); }
+/* Herramientas de IA: bloque centrado a lo ancho de la rejilla. */
+.skill-group-wide { grid-column: 1 / -1; text-align: center; }
+.skill-group h3 { font-size: 1rem; margin-bottom: 0.9rem; }
+.skill-list { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; padding: 0; margin: 0; }
+.skill-badge { padding: 0.25rem 0.65rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 0.3rem; font-size: 0.8rem; }
+
+/* Idiomas e información adicional. */
+.languages-grid { display: grid; gap: var(--space-md); }
+.languages-grid h3 { margin-bottom: 0.4rem; }
+
+/* Pie: enlaces de contacto e iconos. */
+.site-footer { padding-block: var(--space-xl); background: var(--color-ink); color: #dae5e6; }
+.footer-content { display: flex; flex-direction: column; align-items: center; gap: var(--space-lg); }
+.site-footer h2 { color: white; font-size: 1.35rem; font-weight: 600; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); list-style: none; padding: 0; margin: 0; width: 100%; }
+.footer-links li { display: flex; min-width: 0; }
+.footer-link { display: flex; align-items: center; gap: 0.8rem; min-height: 64px; padding: 0.8rem 1rem; border: 1px solid #49616b; border-radius: var(--radius); text-decoration: none; }
+.footer-link:hover { background: #203f4d; border-color: #b6d5c7; }
+.contact-icon { width: 24px; height: 24px; flex-shrink: 0; }
+.footer-link small { display: block; font-size: 0.75rem; color: #b9cdd1; overflow-wrap: anywhere; }
+.site-footer a { overflow-wrap: anywhere; }
+.site-footer a:hover { color: white; }
+.site-footer a:focus-visible { outline-color: #b6d5c7; }
+
+/* Tabletas y escritorio: columnas fluidas, sin anchos que provoquen desbordamiento. */
+@media (min-width: 700px) {
+    /* Movilidad: título y texto comparten línea base. */
+    .additional-section { align-items: baseline; }
+    .nav-links { order: initial; width: auto; }
+    .hero { grid-template-columns: minmax(0, 1fr) auto; align-items: center; padding-block: 5rem; gap: 3rem; }
+    .avatar-frame { justify-self: end; }
+    .resume-section { grid-template-columns: minmax(160px, 0.8fr) minmax(0, 2fr); gap: 3rem; }
+    .skills-grid, .languages-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Accesibilidad: respeta la preferencia de movimiento reducido. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
+/* Impresión: CV legible en papel o al guardar como PDF desde el navegador. */
+@media print {
+    :root { --space-section: 1.2rem; --color-background: white; --color-text: #222; --color-ink: #111; }
+    @page { margin: 15mm; }
+    body { font-size: 10pt; line-height: 1.5; }
+    .container { width: 100%; }
+    .site-nav, .button, .avatar-frame, .site-footer, .skip-link { display: none; }
+    .hero { display: block; padding-block: 0 1rem; }
+    h1 { font-size: 30pt; margin-block: 0.4rem; }
+    h1 span { display: inline; }
+    .hero-role, .profile-text { font-size: 11pt; }
+    .hero-description { max-width: none; }
+    .resume-section { grid-template-columns: 140px minmax(0, 1fr); gap: 1.5rem; }
+    .skills-grid, .languages-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    h2 { font-size: 12pt; }
+    h3 { font-size: 11pt; }
+    a { text-decoration: none; }
+    h2, h3, .item-date { break-after: avoid; }
+    article, .section-heading { break-inside: avoid; }
+}
